@@ -1,2 +1,2 @@
-# Group16
-this is our repository for this recess
+# WDR PROJECT @WIMEA_ICT 2019
+WDR wimea-ICT project
