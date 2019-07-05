@@ -1,0 +1,44 @@
+<app-header
+  style="background-color: #56a5db"
+  [navbarBrandRouterLink]="['/dashboard']"
+  [fixed]="true"
+  [navbarBrandFull]="{src: 'assets/img/brand/wimea-full.svg', width: 89, height: 45, alt: 'WIMEA Logo'}"
+  [sidebarToggler]="'lg'"
+  [asideMenuToggler]="'lg'" >
+  <ul class="nav navbar-nav d-md-down-none">
+    <li class="nav-item px-3">
+      <a class="nav-link" href="#" style="color: whitesmoke; font-size: 15px; font-family: 'Courier New', Courier, monospace">MANAGER PANEL</a>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item dropdown" dropdown placement="bottom right">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle (click)="false">
+        <img src="assets/img/avatars/6.jpg" class="img-avatar"/>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
+        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
+        <div class="divider"></div>
+        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+      </div>
+    </li>
+  </ul>
+</app-header>
+<div class="app-body">
+  <app-sidebar [fixed]="true" [display]="'lg'" style="background-color: #0a0c0c">
+    <app-sidebar-nav [navItems]="ObservernavItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+  </app-sidebar>
+  <app-sidebar [fixed]="true" [display]="'lg'" style="background-color: #0a0c0c">
+    <app-sidebar-nav [navItems]="navItems" [perfectScrollbar] [disabled]="sidebarMinimized"></app-sidebar-nav>
+  </app-sidebar>
+  <!-- Main content -->
+  <main class="main">
+    <cui-breadcrumb>
+    </cui-breadcrumb>
+    <div class="container-fluid">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
+<app-footer style="background-color: #56a5db; ">
+  <span style="margin-left: 430px; color:cornsilk">WIMEA-ICT WDR &copy; 2019.  All rights reserved.</span>
+</app-footer>

@@ -1,0 +1,74 @@
+<div style="text-align: center; margin-top: 30px;">
+    <h5>WIMEA-ICT Weather Data Repository</h5>
+    <p>&copy; WIMEA-ICT WDR</p>
+  </div>
+  <div class="app-body" id="container">
+    <main class="main d-flex align-items-center">
+      <div class="container" style="width: 800px; margin-top: 0px;">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <div class="card-group">
+              <div class="card p-4">
+                <div class="card-body">
+                  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+                    <div class="header">
+                        <div class="col-lg-3">
+                            <img src="../../assets/WIMEA LOGO.png"  class="img-responsive" width="116px" height="80px" style="margin-left: -80px; margin-top: -40px;">
+                        </div>
+                        <div class="col-lg-3">
+                            <img src="../../assets/new-mak.png" class="img-responsive" width="116px" height="80px" style="margin-left: 75px; margin-top: -90px;">
+                        </div>
+                        <div class="col-lg-3">
+                            <img src="../../assets/noradlogosort_.gif" class="img-responsive" width="116px" height="60px" style="margin-left: 240px; margin-top: -140px;">
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr style="margin-top: -20px;">
+                    <span><b>Enter your login credentials to continue</b></span>
+                    <br>
+                      <div style="margin-top: 10px;"></div>
+                    </div>
+  
+                      <div class="form-group">
+                          <label>UserName:</label>
+                          <input type="text"class="form-control" name="username" [(ngModel)]="form.username" #username="ngModel" required placeholder="Enter your username"/>
+                          <div *ngIf="f.submitted && username.invalid" class="text-danger">
+                            <div *ngIf="username.errors.required"  class="error">Username is required</div>
+                          </div>
+                      </div>
+      
+                      <div class="form-group">
+                          <label>Password:</label>
+                          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" #password="ngModel"required minlength="6" required placeholder="Enter your password"/>
+                          <div *ngIf="f.submitted && password.invalid" class="text-danger">
+                            <div *ngIf="password.errors.required" class="error">Password is required</div>
+                            <div *ngIf="password.errors.minlength" class="error">Password must be at least 6 characters</div>
+                          </div>
+                      </div>
+                    <div class="row">
+                      <div class="col-6">
+                        <button type="submit" class="btn btn-primary px-4">Sign in</button>
+                      </div>
+                      <div class="col-6 text-right">
+                        <button type="button" class="btn btn-link px-0">Forgot password?</button>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="footer">
+                    <p>In Partnership</p>
+                    <div class="col-lg-2">
+                        <img src="../../assets/logo.fw.png" class="img-responsive" width="100px" height="100px" style="margin-left: -80px;">
+                    </div>
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-8">
+                        <img src="../../assets/bergen.gif" class="img-responsive" width="260px" height="55px" style="margin-left: 70px; margin-top: -120px;">
+                    </div>
+                    <div class="clearfix"></div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
